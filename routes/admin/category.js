@@ -66,7 +66,7 @@ router.post('/', (req, res) => {
 
     pool.query(sql, data, (err, result) => {  //注意此处SQL语句的简写
         if (err) throw err;
-        res.send({ code: 200, msg: '添加类别成功！' });
+        res.send({ code: 200, msg: '添加类别成功！', cid:result.insertId });
     })
 
 })
